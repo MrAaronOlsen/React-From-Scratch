@@ -8,8 +8,19 @@ module.exports = () => {
         output: {
             filename: 'main.js',
             path: path.resolve(__dirname, 'dist'),
-       },
-       plugins: [
+        },
+        module: {
+            rules: [
+                {
+                    test: /\.(js|jsx)$/,
+                    exclude: /node_modules/,
+                    use: {
+                        loader: 'babel-loader',
+                    },
+                }
+            ]
+        },
+        plugins: [
             new HtmlWebpackPlugin({
                 template: path.resolve(__dirname, 'src', 'index.html'),
             })

@@ -1,5 +1,7 @@
-const node = document.createElement("div");
-const textnode = document.createTextNode("Hello World");
-node.appendChild(textnode);
+import React from 'react'
+import { createRoot } from 'react-dom/client'
+import App from './app/App.jsx'
 
-document.getElementById("root").appendChild(node);
+const container = document.getElementById('root')
+const root = createRoot(container)
+root.render(<App />)
